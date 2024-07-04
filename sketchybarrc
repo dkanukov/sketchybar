@@ -1,0 +1,31 @@
+#!/bin/bash
+
+source "$CONFIG_DIR/colors.sh"
+
+PLUGIN_DIR="$CONFIG_DIR/plugins"
+ITEMS_DIR="$CONFIG_DIR/items"
+
+sketchybar --bar position=top height=34 blur_radius=30 color=$BAR_COLOR
+
+default=(
+  padding_left=5
+  padding_right=5
+  label.font="Hack Nerd Font:Bold:14.0"
+  label.color=$WHITE
+  label.padding_left=4
+  label.padding_right=4
+  icon.font="Hack Nerd Font:Bold:17.0"
+  icon.color=$WHITE
+  icon.padding_left=4
+  icon.padding_right=4
+  background.color=$ITEM_BG_COLOR
+  background.corner_radius=5
+  background.height=24
+)
+sketchybar --default "${default[@]}"
+
+# Right Side
+source "$ITEMS_DIR/clock.sh"
+source "$ITEMS_DIR/volume.sh"
+
+sketchybar --update
