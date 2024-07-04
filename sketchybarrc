@@ -24,8 +24,13 @@ default=(
 )
 sketchybar --default "${default[@]}"
 
+#Left Side
+source "$ITEMS_DIR/front_app.sh"
+source "$ITEMS_DIR/spaces.sh"
+
 # Right Side
 source "$ITEMS_DIR/clock.sh"
 source "$ITEMS_DIR/volume.sh"
+source "$ITEMS_DIR/battery.sh"
 
 sketchybar --update
